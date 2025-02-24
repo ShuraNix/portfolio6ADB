@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    color:white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color:purple
+}
+
+/* what i did with chat gpt */
+
+.home {
+    height: 100vh;
+    background: black; /* Set the background to black */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure space between content and image */
+    padding: 0 10%; /* Adjust padding for better layout */
+}
+
+.home-image {
+    max-width: 550px; /* Increased the maximum width */
+    margin-right: -70px;
+    margin-top: 100px; /* Space between image and screen edge */
+}
+
+.home-image img {
+    width: 100%; /* Ensure the image scales responsively */
+    border-radius: 20px; /* Optional: Keep rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow */
+}
+
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2; 
+}
+
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: purple;
+}
+
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-content p{
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.home-content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+
+.home-content .btn-box,
+.home-content .btn-boxcontact {
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    width: 300px;
+    height: 120px;
+}
+
+.home-content .btn-box{
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    width: 300px;
+    height: 120px;
+}
+
+
+.home-content .btn-boxcontact {
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    width: 400px;
+    height: 90px;
+}
+
+
+
+.home-content .btn-box::before,
+.home-content .btn-boxcontact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0); 
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
+}
+
+.btn-box a,
+.btn-boxcontact a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background:rgb(255, 255, 255);
+    border: 2px solid purple;
+    border-radius: 8px;
+    font-size: 19px;
+    color: purple;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-box a::before,
+.btn-boxcontact a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before,
+.btn-boxcontact a:hover::before {
+    width: 100%;
+    background: rgb(196, 181, 196);
+}
+
+.home-sci {
+    position:absolute;
+    bottom: 40px;
+    width: 170px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0); 
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+
+
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid purple;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(196, 181, 196);
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    width: 515px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+}
+
+.home-imgHover:hover {
+    background: black;
+    opacity: .8;
+}
+
+.home-imgHover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0); 
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 2;
+}
+
+/* KEYFRAMES ANIMATION */
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
