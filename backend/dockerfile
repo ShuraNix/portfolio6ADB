@@ -1,12 +1,20 @@
+# Gebruik een lichte versie van Node.js 18
 FROM node:18-alpine
 
+# Zet de werkmap naar /app
 WORKDIR /app
 
-COPY package.json ./ 
+# Kopieer package.json naar de container
+COPY package.json ./
+
+# Installeer de nodige pakketten
 RUN npm install
 
+# Kopieer de rest van de bestanden naar de container
 COPY . .
 
+# Open poort 5000 voor de applicatie
 EXPOSE 5000
 
+# Start de server met node server.js
 CMD ["node", "server.js"]

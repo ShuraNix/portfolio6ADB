@@ -1,0 +1,62 @@
+// # 1) Ga naar de directory waar je projectbestanden zich bevinden
+// cd <bestand_locatie>
+
+// # 2) Start de containers met Docker Compose, bouw de containers opnieuw en draai ze op de achtergrond
+// docker compose up --build -d
+
+// # 3) Voer een shell-opdracht uit in de 'db' container met MongoDB
+// docker exec -it db mongosh
+
+// # 4) Kies de database die je wilt gebruiken (hier is het 'db' genoemd)
+// use db
+
+// # 5) Voeg meerdere documenten toe in de 'skills' collectie met de onderstaande gegevens
+db.skills.insertMany([
+    {
+        'name': 'JavaScript',   // De naam van de vaardigheid
+        'level': 7,             // Het niveau van de vaardigheid (bijvoorbeeld op een schaal van 1 tot 10)
+        'category': 'IT'        // De categorie waar de vaardigheid in valt
+    },
+    {
+        'name': 'HTML',         // De naam van de vaardigheid
+        'level': 8,             // Het niveau van de vaardigheid
+        'category': 'IT'        // De categorie waar de vaardigheid in valt
+    },
+    {
+        'name': 'CSS',          // De naam van de vaardigheid
+        'level': 7,             // Het niveau van de vaardigheid
+        'category': 'IT'        // De categorie waar de vaardigheid in valt
+    },
+    {
+        'name': 'C#',           // De naam van de vaardigheid
+        'level': 7,             // Het niveau van de vaardigheid
+        'category': 'IT'        // De categorie waar de vaardigheid in valt
+    }
+])
+
+// Voeg meerdere documenten toe in de 'projects' collectie met de onderstaande gegevens
+db.projects.insertMany([
+    {
+      "name": "Leerlingencylopedie",           // De naam van het project
+      "technologies": ["WPF", "SQL"],          // De gebruikte technologieën in het project
+      "category": "IT"                         // De categorie waar het project in valt
+    },
+    {
+      "name": "OOP Stopwatch",                 // De naam van het project
+      "technologies": ["HTML", "CSS", "JavaScript"], // De gebruikte technologieën in het project
+      "category": "IT"                         // De categorie waar het project in valt
+    }
+  ]);
+
+
+
+// docke exec =  Hiermee voer je een commando uit in een draaiende container, Bijvoorbeeld om een shell te openen in de container:  docker exec -it <container_naam> mongosh
+// docker logs = : Hiermee bekijk je de logbestanden van een draaiende container, Bijvoorbeeld om de logs van een container te zien: docker logs <container_naam>
+
+//Script voor het switchen van database: use <database_naam>
+// Script voor het aanmaken van de collectie "projects": db.createCollection("projects")
+// Script voor het aanmaken van de collectie "skills": db.createCollection("skills")
+
+// Bekijk de inhoud van de collectie "skills": db.skills.find()
+
+// Bekijk de inhoud van de collectie "projects": db.projects.find()

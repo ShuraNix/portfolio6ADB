@@ -19,34 +19,44 @@ window.addEventListener("load", () => {
         .then(data => {
             console.log('Skills retrieved', data);
 
-            // Creating an HTML list for skills
-            let html = `<ul style="list-style-type: none; padding: 0; margin: 0;">`;  // Applying style directly here
+            // Creating a styled HTML list for skills
+            let html = `<div class="skills-list">`; // Wrap list in a div for styling
             for (let i = 0; i < data.length; i++) {
-                html += `<li>${data[i].name} - ${data[i].level} - ${data[i].category}</li>`;
+                html += `
+                    <div class="skill-item">
+                        <h3>${data[i].name}</h3>
+                        <p>Level: ${data[i].level} / Category: ${data[i].category}</p>
+                    </div>
+                `;
             }
-            document.getElementById("skills").innerHTML = html + `</ul>`;
+            document.getElementById("skills").innerHTML = html + `</div>`;
         })
         .catch(error => {
             console.error("Error fetching skill data:", error);
             document.getElementById("skills").innerText = "Error loading skill data.";
         });
 
-
     // Fetch project data from the backend
     fetch("http://localhost:5000/project")
         .then(response => response.json())
         .then(data => {
-            console.log('projects retrieved', data);
+            console.log('Projects retrieved', data);
 
-            // Creating an HTML list for skills
-            let html = `<ul style="list-style-type: none; padding: 0; margin: 0;">`;
+            // Creating a styled HTML list for projects
+            let html = `<div class="projects-list">`;
             for (let i = 0; i < data.length; i++) {
-                html += `<li>${data[i].name} - ${data[i].technologies} - ${data[i].category}</li>`;
+                html += `
+                    <div class="project-item">
+                        <h3>${data[i].name}</h3>
+                        <p>Technologies: ${data[i].technologies.join(", ")}</p>
+                        <p>Category: ${data[i].category}</p>
+                    </div>
+                `;
             }
-            document.getElementById("projects").innerHTML = html + `</ul>`;
+            document.getElementById("projects").innerHTML = html + `</div>`;
         })
         .catch(error => {
-            console.error("Error fetching skill data:", error);
+            console.error("Error fetching project data:", error);
             document.getElementById("projects").innerText = "Error loading project data.";
         })
-    });
+});

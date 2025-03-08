@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review - Ghaleb's Portfolio</title>
+    <link rel="stylesheet" href="/frontend/review.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Ghaleb.</a>
+        <nav class="navbar">
+            <a href="/frontend/index.html">Home</a>
+            <a href="/frontend/skills.html">Skills</a>
+            <a href="/frontend/projects.html">Projects</a>
+            <a href="/frontend/contact.html">Contact</a>
+            <a href="#" class="active"">Reviews</a>
+        </nav>
+    </header>
+
+    <section class=" review-section">
+                <h1>Customer Reviews</h1>
+                <div class="review-form">
+                    <h2>Leave a Review</h2>
+                    <form id="review-form">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <textarea id="review" placeholder="Write your review..." required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="review-list">
+                    <h2>What Others Are Saying</h2>
+                    <div id="reviews">
+
+                    </div>
+                </div>
+                </section>
+
+                <script>
+                    const form = document.getElementById('review-form');
+                    const reviewsContainer = document.getElementById('reviews');
+
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        const name = document.getElementById('name').value;
+                        const review = document.getElementById('review').value;
+
+                        const reviewElement = document.createElement('div');
+                        reviewElement.classList.add('review');
+                        reviewElement.innerHTML = `<h3>${name}</h3><p>${review}</p>`;
+                        reviewsContainer.appendChild(reviewElement);
+
+                        form.reset();
+                    });
+                </script>
+</body>
+
+</html>

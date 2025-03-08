@@ -1,6 +1,11 @@
+# Gebruik de Nginx-webserver (lichte versie)
 FROM nginx:alpine
 
+# Kopieer alles uit de huidige map naar de map waar Nginx de website laat zien
 COPY . /usr/share/nginx/html
 
+# Zorg ervoor dat poort 80 open is zodat de website te zien is
 EXPOSE 80
+
+# Start de Nginx-webserver en laat deze draaien
 CMD ["nginx", "-g", "daemon off;"]
